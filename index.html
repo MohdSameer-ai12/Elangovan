@@ -105,7 +105,7 @@
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
-     background-image: url(https://res.cloudinary.com/nalikfpn/image/upload/v1789029225/ChatGPT_Image_Sep_5_2026_11_31_39_AM_1.png);
+     background-image: url(https://res.cloudinary.com/nalikfpn/image/upload/v1789043222/ChatGPT_Image_Sep_10_2026_05_55_49_PM.png);
     background-position: center;
     background-size: cover;
     color:var(--white);
@@ -124,7 +124,7 @@
     position:absolute;
     left:0;right:0;bottom:0;
     height:520px;
-    background:linear-gradient(to bottom, transparent, rgba(255, 174, 0, 0.616) 75%);
+    background:linear-gradient(to bottom, transparent, rgba(255, 174, 0, 0) 75%);
     pointer-events:none;
     z-index:1;
   }
@@ -135,7 +135,7 @@
    
   }
   .hero-text .kicker{color:var(--gold-400);}
-  .hero-text{color:#000; margin-left:22%;}
+  .hero-text{color:var(--white); margin-left:22%;}
   .hero-text .kicker{font-size:16px;}
   .hero-sign{width:min(350px,75%);height:auto;}
   .hero-text .hero-sign{width:min(480px,95%);}
@@ -143,15 +143,15 @@
   .hero-text h1{
     font-size:clamp(44px,6vw,72px);
     line-height:1.08;font-weight:700;
-    color:#000;
+    color:var(--white);
   }
   .hero-text .role{
-    margin-top:18px;font-size:18px;letter-spacing:1.5px;color:var(--navy-900);
+    margin-top:18px;font-size:18px;letter-spacing:1.5px;color:var(--white);
     display:flex;gap:10px;font-weight:500;
   }
   .hero-text .role span:not(:last-child)::after{content:"•";margin-left:10px;color:var(--gold-500);}
   .hero-text p.desc{
-    margin-top:24px;max-width:500px;color:var(--muted);font-size:18px;
+    margin-top:24px;max-width:500px;color:var(--white);font-size:18px;
   }
   .hero-portrait{
     position:relative;display:flex;justify-content:center;
@@ -454,7 +454,7 @@
 <section class="hero" id="home">
   <div class="hero-inner">
     <div class="hero-text">
-      <span class="kicker">Welcome</span>
+      <span class="kicker"></span>
       <img class="hero-sign" src="https://res.cloudinary.com/nalikfpn/image/upload/v1789037806/7916426a-e9c6-4c9c-9b84-d29252f148bd-Picsart-BackgroundRemover.png" alt="Elangovan Rangaswamy signature">
       <div class="role"><span>Engineer</span><span>Builder</span><span>Leader</span></div>
       <p class="desc">With strong engineering expertise and visionary leadership, he has been driving positive international business excellence in construction and infrastructure development.</p>
@@ -462,9 +462,9 @@
       <div><a href="#contact" class="btn-gold" style="margin-top:10px;display:inline-block;">Let's Talk</a></div>
     </div>
     <div class="hero-portrait">
-      <div class="portrait-frame">
+      <!-- <div class="portrait-frame">
         <img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029284/MD3.png" alt="Elangovan Rangaswamy receiving an honour on stage">
-      </div>
+      </div> -->
     </div>
   </div>
 
