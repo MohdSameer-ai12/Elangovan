@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elangovan Rengasamy | Engineer • Builder • Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+  :root{
+    --navy-950:#081326;
+    --navy-900:#0c2038;
+    --navy-800:#122b48;
+    --navy-700:#1a3a5c;
+    --gold-500:#c9a227;
+    --gold-400:#dcb84a;
+    --gold-100:#f3e6bd;
+    --cream:#f7f3ea;
+    --cream-dark:#efe8d8;
+    --ink:#1b2536;
+    --muted:#5b6577;
+    --white:#ffffff;
+    --radius:2px;
+    --maxw:1180px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    font-size:17px;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:Georgia,serif;
+    margin:0;
+    letter-spacing:.2px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  .kicker{
+    font-size:14px;
+    letter-spacing:2.5px;
+    color:var(--gold-500);
+    font-weight:600;
+    display:block;
+    margin-bottom:10px;
+  }
+  .section-title{
+    font-size:clamp(28px,4vw,42px);
+    font-weight:600;
+    color:var(--navy-900);
+  }
+  .section-title .accent{color:var(--gold-500);}
+  .section-sub{
+    max-width:560px;
+    color:var(--muted);
+    font-size:17px;
+    margin-top:14px;
+  }
+  section{padding:96px 0;}
+  ::selection{background:var(--gold-100);color:var(--navy-900);}
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(8,19,38,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:16px 32px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{
+    font-family:Georgia,serif;
+    font-size:20px;font-weight:700;color:var(--white);
+    letter-spacing:1px;
+  }
+  .logo span{color:var(--gold-400);}
+  nav ul{list-style:none;display:flex;gap:34px;margin:0;padding:0;}
+  nav a{
+    color:rgba(255,255,255,.78);
+    font-size:13.5px;font-weight:500;letter-spacing:.4px;
+    position:relative;padding:4px 0;
+    transition:color .25s var(--ease);
+  }
+  nav a::after{
+    content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;
+    background:var(--gold-400);transition:width .3s var(--ease);
+  }
+  nav a:hover{color:var(--white);}
+  nav a:hover::after{width:100%;}
+  .social-links{display:flex;align-items:center;gap:24px;margin-left:28px;}
+  .social-links a{color:rgba(255,255,255,.78);font-size:16px;transition:color .25s var(--ease),transform .25s var(--ease);}
+  .social-links a:hover{color:var(--gold-400);transform:translateY(-2px);}
+  .nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+     background-image: url(https://res.cloudinary.com/nalikfpn/image/upload/v1789029225/ChatGPT_Image_Sep_5_2026_11_31_39_AM_1.png);
+    background-position: center;
+    background-size: cover;
+    color:var(--white);
+    overflow:hidden;
+    padding:90px 0 0;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(rgba(220,184,74,.35) 1px, transparent 1.5px);
+    background-size:26px 26px;
+    opacity:.14;
+    mask-image:linear-gradient(to bottom, black, transparent 75%);
+  }
+  .hero-inner{
+    position:relative;z-index:2;
+    width:100%;margin:0 auto;padding:0 32px;
+    display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;
+   
+  }
+  .hero-text .kicker{color:var(--gold-400);}
+  .hero-text{color:#000; margin-left:22%;}
+  .hero-text .kicker{font-size:16px;}
+  .hero-sign{width:min(350px,75%);height:auto;}
+  .hero-text .hero-sign{width:min(480px,95%);}
+  .hero-text .btn-gold{font-size:16px;padding:16px 34px;}
+  .hero-text h1{
+    font-size:clamp(44px,6vw,72px);
+    line-height:1.08;font-weight:700;
+    color:#000;
+  }
+  .hero-text .role{
+    margin-top:18px;font-size:18px;letter-spacing:1.5px;color:var(--navy-900);
+    display:flex;gap:10px;font-weight:500;
+  }
+  .hero-text .role span:not(:last-child)::after{content:"•";margin-left:10px;color:var(--gold-500);}
+  .hero-text p.desc{
+    margin-top:24px;max-width:500px;color:var(--muted);font-size:18px;
+  }
+  .hero-portrait{
+    position:relative;display:flex;justify-content:center;
+    background-color: transparent;
+  }
+  .portrait-frame{
+    width:min(620px,100%);height:560px;
+    display:flex;align-items:flex-end;justify-content:center;
+    background-color: transparent;
+    position:relative;overflow:hidden;
+  }
+  .portrait-frame img{width:150%;height:110%;object-fit:contain;object-position:center bottom;}
+  .portrait-frame .initials{
+    font-family:Georgia,serif;font-size:120px;font-weight:700;
+    color:rgba(220,184,74,.16);position:absolute;top:14px;left:20px;
+  }
+  .portrait-frame .silhouette{
+    width:74%;height:88%;
+    background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,0));
+    border-radius:50% 50% 0 0 / 30% 30% 0 0;
+    position:relative;z-index:1;
+  }
+  .portrait-frame::after{
+    content:none;
+  }
+  .stats-bar{
+    position:relative;z-index:2;margin-top:70px;
+    background:var(--navy-950);
+    border-top:1px solid rgba(255,255,255,.09);
+    border-bottom:1px solid rgba(255,255,255,.09);
+  }
+  .stats-grid{
+    max-width:var(--maxw);margin:0 auto;padding:0 32px;
+    display:grid;grid-template-columns:repeat(5,1fr);
+  }
+  .stat{
+    padding:26px 10px;text-align:center;border-right:1px solid rgba(255,255,255,.08);
+  }
+  .stat:last-child{border-right:none;}
+  .stat .num{
+    font-family:Georgia,serif;font-size:36px;font-weight:700;color:var(--gold-400);
+  }
+  .stat .label{font-size:14px;letter-spacing:1px;color:rgba(255,255,255,.65);margin-top:4px;}
+
+  /* ---------- STORY ---------- */
+  .story{background:var(--cream);}
+  .story-inner{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start;}
+  .story-portrait{
+    aspect-ratio:4/5;border-radius:4px;overflow:hidden;
+    background:linear-gradient(160deg,var(--navy-800),var(--navy-950));
+    position:relative;border:6px solid var(--white);
+    box-shadow:0 20px 40px -20px rgba(11,31,58,.3);
+  }
+  .story-portrait .initials{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:Georgia,serif;font-size:90px;color:rgba(220,184,74,.3);font-weight:700;
+  }
+  .story-body h3{font-size:24px;color:var(--navy-900);margin-bottom:6px;}
+  .story-body p{color:var(--muted);font-size:15px;margin:14px 0;}
+
+  /* ---------- EXPERTISE ---------- */
+  .expertise{background:var(--navy-950);color:var(--white);text-align:center;}
+  .expertise .section-title,
+  .dark-gallery .section-title,
+  .beyond .section-title{color:var(--white);}
+  .expertise .section-sub{margin-left:auto;margin-right:auto;color:rgba(255,255,255,.6);}
+  .accordion{max-width:820px;margin:50px auto 0;text-align:left;}
+  .acc-item{
+    border-bottom:1px solid rgba(255,255,255,.12);
+    padding:26px 6px;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;gap:20px;
+    transition:background .3s var(--ease);
+  }
+  .acc-item:hover{background:rgba(255,255,255,.03);}
+  .acc-left{display:flex;align-items:center;gap:20px;}
+  .acc-num{
+    font-family:Georgia,serif;color:var(--gold-500);font-size:14px;
+    border:1px solid var(--gold-500);border-radius:50%;
+    width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .acc-title{font-size:18px;font-weight:600;}
+  .acc-desc{
+    max-width:0;overflow:hidden;color:rgba(255,255,255,.6);font-size:14px;
+    transition:max-width .4s var(--ease);white-space:nowrap;
+  }
+  .acc-item.active .acc-desc{max-width:340px;white-space:normal;}
+  .acc-item.active .acc-title{color:var(--gold-400);}
+  .acc-chev{transition:transform .3s var(--ease);color:var(--gold-500);}
+  .acc-item.active .acc-chev{transform:rotate(45deg);}
+
+  /* ---------- PARTNERSHIP STRIP ---------- */
+  .strip{background:var(--cream-dark);}
+  .strip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center;}
+  .strip h2.section-title{text-align:center;margin-bottom:8px;}
+  .strip .section-sub{margin:0 auto 50px;text-align:center;}
+  .strip-item .icon{
+    width:52px;height:52px;margin:0 auto 16px;border-radius:50%;
+    background:var(--white);border:1px solid var(--gold-100);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold-500);font-size:20px;
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .strip-item:hover .icon{transform:translateY(-6px);box-shadow:0 10px 24px -10px rgba(201,162,39,.5);}
+  .strip-item h4{font-size:15.5px;color:var(--navy-900);}
+  .strip-item p{font-size:13px;color:var(--muted);margin-top:6px;}
+
+  /* ---------- GLOBAL PRESENCE ---------- */
+  .global{background:var(--cream);text-align:center;}
+  .global .section-sub{margin:14px auto 0;}
+  .globe-grid{
+    margin-top:50px;display:grid;grid-template-columns:1fr 2fr;gap:20px;text-align:left;
+  }
+  .globe-visual{
+    border-radius:4px;background:radial-gradient(circle at 40% 35%, var(--navy-700), var(--navy-950) 70%);
+    display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:280px;
+  }
+  .globe-visual video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .globe-visual .ring{
+    width:150px;height:150px;border-radius:50%;border:2px dashed rgba(220,184,74,.4);
+    display:flex;align-items:center;justify-content:center;animation:spin 18s linear infinite;
+  }
+  .globe-visual .ring::before{
+    content:"🌍";font-size:40px;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .photo-tile{
+    aspect-ratio:1/1;border-radius:3px;overflow:hidden;position:relative;
+    background:linear-gradient(150deg,var(--navy-700),var(--navy-900));
+  }
+  .photo-tile span{
+    position:absolute;bottom:8px;left:10px;color:var(--white);font-size:11.5px;
+    font-weight:600;letter-spacing:.3px;z-index:2;
+  }
+  .photo-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.55));}
+  .photo-tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);}
+  .photo-tile:hover img{transform:scale(1.08);}
+
+  /* ---------- DARK GALLERY SECTIONS ---------- */
+  .dark-gallery{background:var(--navy-950);color:var(--white);text-align:center;}
+  .dark-gallery .section-sub{margin:14px auto 0;color:rgba(255,255,255,.6);}
+  .gallery-masonry{
+    margin-top:50px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:left;
+  }
+  .gcard{
+    position:relative;border-radius:4px;overflow:hidden;
+    cursor:pointer;
+  }
+  .gcard img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;background:linear-gradient(150deg,var(--navy-700),var(--navy-900));transition:transform .5s var(--ease),filter .4s var(--ease);}
+  .gcard:hover img{transform:scale(1.1);filter:brightness(.75);}
+  .gcard .cap{
+    position:absolute;left:0;right:0;bottom:0;z-index:1;padding:32px 14px 14px;
+    background:linear-gradient(180deg,transparent,rgba(4,10,20,.9));
+    color:var(--white);font-size:13.5px;font-weight:600;letter-spacing:.3px;
+    pointer-events:none;
+  }
+  .cta-inline{
+    margin-top:60px;display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:20px;border-top:1px solid rgba(255,255,255,.1);padding-top:40px;text-align:left;
+  }
+  .cta-inline h3{font-size:24px;font-weight:600;}
+  .cta-inline p{color:rgba(255,255,255,.6);font-size:14px;margin-top:6px;}
+  .btn-gold{
+    display:inline-block;background:var(--gold-500);color:var(--navy-950);
+    padding:14px 30px;font-weight:700;font-size:13.5px;letter-spacing:.5px;
+    border-radius:2px;border:none;cursor:pointer;
+    transition:background .3s var(--ease), transform .3s var(--ease);
+  }
+  .btn-gold:hover{background:var(--gold-400);transform:translateY(-2px);}
+
+  /* ---------- CERTIFICATES ---------- */
+  .certs{background:var(--cream);text-align:center;}
+  .certs .section-sub{margin:14px auto 0;}
+  .cert-grid{
+    margin-top:50px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;text-align:left;
+  }
+  .cert-card{
+    background:var(--white);border:1px solid var(--cream-dark);border-radius:4px;overflow:hidden;
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .cert-card:hover{transform:translateY(-8px);box-shadow:0 20px 34px -20px rgba(11,31,58,.28);}
+  .cert-thumb{
+    aspect-ratio:16/10;background:linear-gradient(150deg,#dfe8f5,#c9d6ea);
+    display:flex;align-items:center;justify-content:center;color:var(--navy-700);font-size:26px;
+  }
+  .cert-body{padding:16px 18px 20px;}
+  .cert-num{font-size:11px;color:var(--gold-500);font-weight:700;letter-spacing:1px;}
+  .cert-body h4{font-size:16px;color:var(--navy-900);margin-top:6px;font-family:'Poppins',sans-serif;font-weight:600;}
+  .cert-body p{font-size:12.5px;color:var(--muted);margin-top:4px;}
+
+  /* ---------- BEYOND BUSINESS ---------- */
+  .beyond{background:linear-gradient(160deg,var(--navy-950),#0a1c33);color:var(--white);text-align:center;}
+  .beyond .section-sub{margin:14px auto 0;color:rgba(255,255,255,.6);}
+  .beyond-grid{margin-top:50px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left;}
+  .beyond-card{
+    position:relative;border-radius:4px;overflow:hidden;aspect-ratio:3/4;
+    background:linear-gradient(150deg,var(--navy-700),var(--navy-900));
+  }
+  .beyond-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);}
+  .beyond-card:hover img{transform:scale(1.08);}
+  .beyond-card .info{
+    position:absolute;left:0;right:0;bottom:0;z-index:1;padding:20px;
+    background:linear-gradient(180deg,transparent,rgba(4,10,20,.92));
+  }
+  .beyond-card .info small{color:var(--gold-400);font-size:11.5px;letter-spacing:1px;font-weight:700;}
+  .beyond-card .info h4{font-size:18px;margin-top:6px;font-weight:600;}
+  .beyond-card .info a{
+    display:inline-block;margin-top:10px;font-size:12px;color:var(--white);
+    border-bottom:1px solid var(--gold-500);padding-bottom:2px;
+  }
+  .quote-block{
+    margin-top:60px;padding:34px;border:1px solid rgba(220,184,74,.3);border-radius:4px;
+    font-family:Georgia,serif;font-size:22px;font-style:italic;color:var(--gold-100);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:0;border-radius:6px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(11,31,58,.25);}
+  .contact-left{
+    background:linear-gradient(160deg,var(--navy-900),var(--navy-950));color:var(--white);padding:50px 40px;
+  }
+  .contact-left h3{font-size:26px;margin-bottom:16px;}
+  .contact-left p{color:rgba(255,255,255,.65);font-size:14px;margin-bottom:30px;}
+  .contact-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px;}
+  .contact-row .ic{color:var(--gold-400);font-size:16px;margin-top:2px;}
+  .contact-row div strong{display:block;font-size:14px;}
+  .contact-row div span{font-size:13px;color:rgba(255,255,255,.6);}
+  .contact-right{background:var(--white);padding:50px 40px;}
+  .contact-right h3{font-size:22px;color:var(--navy-900);margin-bottom:20px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .form-field{display:flex;flex-direction:column;gap:6px;}
+  .form-field.full{grid-column:1/-1;}
+  .form-field label{font-size:12px;color:var(--muted);font-weight:500;}
+  .form-field input, .form-field textarea{
+    border:1px solid #e2ddd0;border-radius:3px;padding:12px 14px;font-family:inherit;font-size:14px;
+    background:#fbfaf6;transition:border-color .25s, box-shadow .25s;
+  }
+  .form-field input:focus, .form-field textarea:focus{
+    outline:none;border-color:var(--gold-500);box-shadow:0 0 0 3px rgba(201,162,39,.15);
+  }
+  .form-field textarea{resize:vertical;min-height:90px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-950);color:rgba(255,255,255,.65);padding-top:70px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .footer-grid h5{color:var(--white);font-size:16px;letter-spacing:.5px;margin-bottom:18px;font-family:'Poppins',sans-serif;font-weight:600;}
+  .footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:13.5px;}
+  .footer-grid ul a{transition:color .25s;}
+  .footer-grid ul a:hover{color:var(--gold-400);}
+  .footer-bottom{
+    display:flex;justify-content:center;align-items:center;gap:24px;text-align:center;padding:24px 0;font-size:12.5px;color:rgba(255,255,255,.4);
+  }
+
+  .fade-up{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease), transform .7s var(--ease);}
+  .fade-up.in{opacity:1;transform:translateY(0);}
+
+  @media(max-width:900px){
+    nav ul{display:none;}
+    .nav-toggle{display:block;}
+    .hero-inner{grid-template-columns:1fr;text-align:center;}
+    .hero-text .role{justify-content:center;}
+    .hero-text p.desc{margin-left:auto;margin-right:auto;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);}
+    .story-inner{grid-template-columns:1fr;}
+    .strip-grid{grid-template-columns:repeat(2,1fr);}
+    .globe-grid{grid-template-columns:1fr;}
+    .photo-grid,.gallery-masonry,.cert-grid,.beyond-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="logo">ER<span>.</span></div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#story">Expertise</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="social-links" aria-label="Social links">
+      <a href="#" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+      <a href="#" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+      <a href="#" title="WhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+      <a href="#" title="Email" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+    </div>
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="kicker">Welcome</span>
+      <img class="hero-sign" src="https://res.cloudinary.com/nalikfpn/image/upload/v1789037806/7916426a-e9c6-4c9c-9b84-d29252f148bd-Picsart-BackgroundRemover.png" alt="Elangovan Rangaswamy signature">
+      <div class="role"><span>Engineer</span><span>Builder</span><span>Leader</span></div>
+      <p class="desc">With strong engineering expertise and visionary leadership, he has been driving positive international business excellence in construction and infrastructure development.</p>
+      
+      <div><a href="#contact" class="btn-gold" style="margin-top:10px;display:inline-block;">Let's Talk</a></div>
+    </div>
+    <div class="hero-portrait">
+      <div class="portrait-frame">
+        <img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029284/MD3.png" alt="Elangovan Rangaswamy receiving an honour on stage">
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat"><div class="num" data-count="20" data-suffix="+">0</div><div class="label">Years of Experience</div></div>
+      <div class="stat"><div class="num" data-count="100" data-suffix="+">0</div><div class="label">Global Clients</div></div>
+      <div class="stat"><div class="num" data-count="100" data-suffix="+">0</div><div class="label">Projects Completed</div></div>
+      <div class="stat"><div class="num" data-count="50" data-suffix="+">0</div><div class="label">Skilled Professionals</div></div>
+      <div class="stat"><div class="num" data-count="5" data-suffix="+">0</div><div class="label">Roles Served In</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="wrap story-inner">
+    <div class="story-portrait fade-up">
+      <span class="initials"><img class="hero-sign" src="https://res.cloudinary.com/nalikfpn/image/upload/v1789034535/ChatGPT_Image_Sep_5_2026_11_52_59_AM-Picsart-BackgroundRemover.png" alt="Elangovan Rangaswamy signature">
+    </span>
+    </div>
+    <div class="story-body fade-up">
+      <span class="kicker">Our Story &amp; Vision</span>
+      <h2 class="section-title">Elangovan <span class="accent">Rangaswamy</span></h2>
+      <p>Elangovan Rangasamy, born in Tamil Nadu, India, is a political strategist and philanthropist known for his advocacy of equality and his achievements as a sports administrator. He served as the former Founder and Managing Director of Kalpar Capital and holds pivotal roles in the General Secretary of the Tamil Nadu Basketball Association.</p>
+      <p>Additionally, he serves as the General Secretary for the Tamil Nadu Olympic Association Board and is the founder of Voice of Commons, a platform empowering students and young professionals to engage meaningfully in political affairs.</p>
+      <p>The political party has recognized his tireless efforts and social justice, resonated strongly with Andhra Aiyanaar beliefs — showing his ideological clarity and political integrity of its leader, Vijay, whose vision aligned himself with the party and took on the role of General Secretary for Election Campaign Management.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise">
+  <div class="wrap">
+    <span class="kicker">Areas 2 of 2</span>
+    <h2 class="section-title">Expertise <span class="accent">&amp; Solutions</span></h2>
+    <p class="section-sub">Delivering measured impact across leadership, infrastructure, and the arts.</p>
+    <div class="accordion" id="accordion">
+      <div class="acc-item active">
+        <div class="acc-left"><div class="acc-num">01</div><div class="acc-title">Business Leadership</div></div>
+        <div class="acc-desc">A CEO of multiple international ventures, he builds teams and strategy that translate vision into performance.</div>
+        <div class="acc-chev">+</div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-left"><div class="acc-num">02</div><div class="acc-title">Civil Engineering</div></div>
+        <div class="acc-desc">Trained as a civil engineer, he builds a working command of structural design and standards that still shapes his decisions today.</div>
+        <div class="acc-chev">+</div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-left"><div class="acc-num">03</div><div class="acc-title">Construction &amp; Real Estate</div></div>
+        <div class="acc-desc">From residential developments to commercial buildings, he oversees construction projects end to end — on time and to spec.</div>
+        <div class="acc-chev">+</div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-left"><div class="acc-num">04</div><div class="acc-title">Film &amp; Performing Arts</div></div>
+        <div class="acc-desc">A recurring presence in bold short films, rallying on stage that transcends the mainstream — and back to storytelling.</div>
+        <div class="acc-chev">+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<section class="strip">
+  <div class="wrap">
+    <span class="kicker" style="display:block;text-align:center;">Areas 1 of 2</span>
+    <h2 class="section-title">Build Partnerships &amp; Deliver Results</h2>
+    <p class="section-sub">Every engagement built on trust, quality, and long-term relationships.</p>
+    <div class="strip-grid">
+      <div class="strip-item"><div class="icon">◆</div><h4>Client First</h4><p>Solutions shaped around real needs.</p></div>
+      <div class="strip-item"><div class="icon">✓</div><h4>Quality Commitment</h4><p>Consistent standards, every project.</p></div>
+      <div class="strip-item"><div class="icon">⏱</div><h4>Timely Delivery</h4><p>Milestones met, without compromise.</p></div>
+      <div class="strip-item"><div class="icon">↻</div><h4>Sustainability</h4><p>Building with tomorrow in mind.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL PRESENCE -->
+<section class="global">
+  <div class="wrap">
+    <span class="kicker">Global Network</span>
+    <h2 class="section-title">Global <span class="accent">Presence</span></h2>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto;">Working, trusted and collaborated across 20+ countries, building global relationships and exploring opportunities.</p>
+    <div class="globe-grid">
+      <div class="globe-visual fade-up"><video autoplay muted loop playsinline aria-label="Airplane flying around the world"><source src="https://res.cloudinary.com/nalikfpn/video/upload/v1789038747/Airplane_flying_around_rotating___202609051135.mp4" type="video/mp4"></video></div>
+      <div class="photo-grid">
+        <div class="photo-tile fade-up"><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789036907/images_11.jpg" alt="United States"><span>United States</span></div>
+        <div class="photo-tile fade-up"><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789036891/images_4.jpg" alt="United Kingdom"><span>United Kingdom</span></div>
+        <div class="photo-tile fade-up"><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789036890/images_6.jpg" alt="South Korea"><span>South Korea</span></div>
+        <div class="photo-tile fade-up"><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789036890/images_5.jpg" alt="Singapore"><span>Singapore</span></div>
+        <div class="photo-tile fade-up"><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789036890/images_8.jpg" alt="UAE"><span>UAE</span></div>
+        <div class="photo-tile fade-up"><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789036889/images_7.jpg" alt="Malaysia"><span>Malaysia</span></div>
+        <div class="photo-tile fade-up"><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789036879/images_9.jpg" alt="Japan"><span>Japan</span></div>
+        <div class="photo-tile fade-up"><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789036878/images_10.jpg" alt="Australia"><span>Australia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS DEV -->
+<section class="dark-gallery" id="gallery">
+  <div class="wrap">
+    <span class="kicker">People • Network • Opportunities</span>
+    <h2 class="section-title">Business Development <span class="accent">&amp; Debates</span></h2>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto;">Building meaningful connections and expanding opportunities through networking and collaboration.</p>
+    <div class="gallery-masonry">
+      <div class="gcard"><div class="cap">Business Leadership</div><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029197/gallery3.jpg.jpg" alt="Business leadership"></div>
+      <div class="gcard"><div class="cap">Professional Forum</div><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029200/gallery.jpg.jpg" alt="Professional forum"></div>
+      <div class="gcard"><div class="cap">Public Discussions</div><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029199/gallery7.jpg.jpg" alt="Public discussions"></div>
+      <div class="gcard"><div class="cap">Networking &amp; Collaboration</div><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029294/Screenshot_2026-09-07_152125-Picsart-AiImageEnhancer_-_Copy.png" alt="Networking and collaboration"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MOMENTS -->
+<section class="dark-gallery" style="padding-top:0;">
+  <div class="wrap">
+    <span class="kicker">People • Places • Milestones</span>
+    <h2 class="section-title">Moments <span class="accent">&amp; Memories</span></h2>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto;">A collection of memorable moments captured across the years.</p>
+    <div class="gallery-masonry">
+      <div class="gcard"><div class="cap">Milestone</div><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029204/gallery4.jpg.jpg" alt="Milestone moment"></div>
+      <div class="gcard"><div class="cap">Team Moments</div><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029202/gallery9.jpg.jpg" alt="Team moments"></div>
+      <div class="gcard"><div class="cap">Recognition</div><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029201/gallery8.jpg.jpg" alt="Recognition moment"></div>
+      <div class="gcard"><div class="cap">Celebration</div><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029198/WhatsApp_Image_2026-09-08_at_10.00.12_AM_2.jpg" alt="Celebration moment"></div>
+      <div class="gcard"><div class="cap">Community</div><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029197/WhatsApp_Image_2026-09-08_at_10.00.12_AM_3.jpg" alt="Community moment"></div>
+      <div class="gcard"><div class="cap">Site Visit</div><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029198/WhatsApp_Image_2026-09-08_at_10.00.12_AM_1_-_Copy.jpg" alt="Site visit"></div>
+      <div class="gcard"><div class="cap">Award Night</div><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029195/498278066_24042119642051701_7189134665979663956_n_-_Copy.jpg" alt="Award night"></div>
+      <div class="gcard"><div class="cap">Portrait</div><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029195/485145354_9859939394029630_4295958109847424743_n_-_Copy.jpg" alt="Portrait"></div>
+    </div>
+    <div class="cta-inline">
+      <div><h3>Let's Build the Future Together.</h3><p>Partnerships and collaborations, thoughtfully built to create lasting impact.</p></div>
+      <a href="#contact" class="btn-gold">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section class="certs" id="achievements">
+  <div class="wrap">
+    <span class="kicker">Professional Excellence</span>
+    <h2 class="section-title">Certificates <span class="accent">&amp; Achievements</span></h2>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto;">A journey of continuous learning, professional excellence, leadership, and achievement.</p>
+    <div class="cert-grid" id="certGrid"></div>
+  </div>
+</section>
+
+<!-- BEYOND BUSINESS -->
+<section class="beyond">
+  <div class="wrap">
+    <span class="kicker">Beyond The Boardroom</span>
+    <h2 class="section-title">Beyond <span class="accent">Business.</span></h2>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto;">Business builds opportunities. Creativity tells stories. Service creates impact.</p>
+    <div class="beyond-grid">
+      <div class="beyond-card"><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029294/Screenshot_2026-09-07_152125-Picsart-AiImageEnhancer_-_Copy.png" alt="Community leadership"><div class="info"><small>Community</small><h4>Giving Back, Making a Difference</h4><a href="https://youtu.be/6BMEdiBqt1M?si=rzUhVZEJxLt3Uy1s">Read More</a></div></div>
+      <div class="beyond-card"><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789036375/Screenshot_2026-09-07_152709.png" alt="Connecting with people"><div class="info"><small>People</small><h4>Connecting With People</h4><a href="https://youtu.be/8yXPXuo-EBU?si=8yFAi7EffasV068m">Read More</a></div></div>
+      <div class="beyond-card"><img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789036375/Screenshot_2026-09-07_153154.png" alt="Creative arts and storytelling"><div class="info"><small>Arts</small><h4>A Journey of Creativity</h4><a href="https://youtu.be/GXwbUc_TkP8?si=sDl7l4kD8V9W0EUD">Read More</a></div></div>
+    </div>
+    <div class="quote-block fade-up">"Business builds opportunities. Creativity tells stories. Service creates impact."</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="kicker">Contact</span>
+        <h3>Let's start a conversation.</h3>
+        <p>For business inquiries, project proposals, or offer collaborations — reach out directly or through any of the channels below.</p>
+        <div class="contact-row"><div class="ic">☎</div><div><strong>+91 994 246 6663</strong><span>Mon–Sat, 9am–6pm</span></div></div>
+        <div class="contact-row"><div class="ic">✉</div><div><strong>senelainternational@gmail.com</strong><span>General enquiries</span></div></div>
+        <div class="contact-row"><div class="ic">⚲</div><div><strong>Chennai, Tamil Nadu, India</strong><span>Available for travel</span></div></div>
+      </div>
+      <div class="contact-right">
+        <h3>Tell me about your project.</h3>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-field"><label>Full Name</label><input type="text" required></div>
+            <div class="form-field"><label>Email Address</label><input type="email" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-field full"><label>Subject</label><input type="text"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-field full"><label>Message</label><textarea required></textarea></div>
+          </div>
+          <button type="submit" class="btn-gold" style="width:100%;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;">ER<span>.</span></div>
+        <p style="font-size:13.5px;max-width:260px;">Engineer, builder and leader driving positive change across business, industry and community.</p>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul><li><a href="#home">Home</a></li><li><a href="#story">Expertise</a></li><li><a href="#achievements">Achievements</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div>
+        <h5>Expertise</h5>
+        <ul><li>Business Leadership</li><li>Civil Engineering</li><li>Construction</li><li>Film &amp; Arts</li></ul>
+      </div>
+      <div>
+        <h5>Contact Info</h5>
+        <ul><li>Chennai, Tamil Nadu</li><li>senelainternational@gmail.com</li><li>+91 994 246 6663</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Copyright © 2026 Elangovan Rengasamy. All rights reserved.</span>
+      
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navUl = document.querySelector('nav ul');
+  navToggle.addEventListener('click', () => {
+    const showing = navUl.style.display === 'flex';
+    navUl.style.display = showing ? 'none' : 'flex';
+    navUl.style.flexDirection = 'column';
+    navUl.style.position = 'absolute';
+    navUl.style.top = '60px';
+    navUl.style.right = '20px';
+    navUl.style.background = '#0c2038';
+    navUl.style.padding = '20px 26px';
+    navUl.style.borderRadius = '6px';
+    navUl.style.gap = '16px';
+  });
+
+  // Smooth scroll (native via CSS + fallback offset correction)
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const y = target.getBoundingClientRect().top + window.pageYOffset - 70;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        navUl.style.display = '';
+      }
+    });
+  });
+
+  // Accordion
+  document.querySelectorAll('.acc-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.acc-item').forEach(i => i.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    });
+  });
+
+  // Number count-up on scroll into view
+  const counters = document.querySelectorAll('.num[data-count]');
+  const countObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1400;
+        const start = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        countObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => countObserver.observe(c));
+
+  // Fade-up reveal on scroll
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  fadeEls.forEach(el => fadeObserver.observe(el));
+
+  // Build certificate cards dynamically
+  const certData = [
+    ["01","Excellence In Engineering","IIT, Madras"],
+    ["02","Industry Achievement","Global Achievers Award"],
+    ["03","Leadership Via Excellence","Leadership Council"],
+    ["04","Business Leadership","Business Excellence Award"],
+    ["05","Solar Installation","NABCEP Certified Solar Installer"],
+    ["06","Project Leadership","PMP – Project Management Professional"],
+    ["07","Risk Management","PMI – Risk Management Professional"],
+    ["08","Technical Design","AutoCAD – CAD Certified"],
+    ["09","Leadership Commitment","IEEE Certified"],
+    ["10","Process Quality Excellence","Six Sigma"],
+    ["11","Efficient Project Planning","MS Project"],
+    ["12","Project Leadership","PMP"]
+  ];
+  const certGrid = document.getElementById('certGrid');
+  certData.forEach(([num,title,sub]) => {
+    const card = document.createElement('div');
+    card.className = 'cert-card';
+    card.innerHTML = `
+      <div class="cert-thumb">🏆</div>
+      <div class="cert-body">
+        <div class="cert-num">CERT ${num}</div>
+        <h4>${title}</h4>
+        <p>${sub}</p>
+      </div>`;
+    certGrid.appendChild(card);
+  });
+
+  // Contact form (demo only, no backend)
+  document.getElementById('contactForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    const original = btn.textContent;
+    btn.textContent = 'Message Sent ✓';
+    e.target.reset();
+    setTimeout(() => btn.textContent = original, 2500);
+  });
+</script>
+</body>
+</html>
+
+
