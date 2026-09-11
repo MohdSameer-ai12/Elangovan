@@ -6,6 +6,7 @@
 <title>Elangovan Rengasamy | Engineer • Builder • Leader</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
   :root{
@@ -36,11 +37,12 @@
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
-  h1,h2,h3,h4{
-    font-family:Georgia,serif;
+  h1,h2,h3,h4,h5{
+    font-family:'Inter',sans-serif;
     margin:0;
     letter-spacing:.2px;
   }
+  p{font-family:'Inter',sans-serif;}
   a{color:inherit;text-decoration:none;}
   img{max-width:100%;display:block;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
@@ -64,7 +66,15 @@
     font-size:17px;
     margin-top:14px;
   }
-  section{padding:96px 0;}
+  section{
+    padding:96px 0;font-family:'Inter',sans-serif;
+    opacity:0;transform:translateY(34px);
+    transition:opacity .8s var(--ease),transform .8s var(--ease);
+  }
+  section.section-visible{opacity:1;transform:translateY(0);}
+  @media(prefers-reduced-motion:reduce){
+    section{opacity:1;transform:none;transition:none;}
+  }
   ::selection{background:var(--gold-100);color:var(--navy-900);}
 
   /* ---------- NAV ---------- */
@@ -105,7 +115,28 @@
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
-     background-image: url(https://res.cloudinary.com/nalikfpn/image/upload/v1789043222/ChatGPT_Image_Sep_10_2026_05_55_49_PM.png);
+     background-image: url(https://res.cloudinary.com/nalikfpn/image/upload/v1789117171/bg1.png);
+      /* background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(28, 70, 110, 0.45) 0%,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(15, 45, 75, 0.55) 0%,
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #071525 0%,
+            #0C2038 45%,
+            #102B48 70%,
+            #071525 100%
+        );
+
+    color: #ffffff; */
+
     background-position: center;
     background-size: cover;
     color:var(--white);
@@ -135,7 +166,7 @@
    
   }
   .hero-text .kicker{color:var(--gold-400);}
-  .hero-text{color:var(--white); margin-left:22%;}
+  .hero-text{color:#fffdfd; margin-left:22%;}
   .hero-text .kicker{font-size:16px;}
   .hero-sign{width:min(350px,75%);height:auto;}
   .hero-text .hero-sign{width:min(480px,95%);}
@@ -143,19 +174,20 @@
   .hero-text h1{
     font-size:clamp(44px,6vw,72px);
     line-height:1.08;font-weight:700;
-    color:var(--white);
+    color:#fcfcfc;
   }
   .hero-text .role{
-    margin-top:18px;font-size:18px;letter-spacing:1.5px;color:var(--white);
+    margin-top:18px;font-size:18px;letter-spacing:1.5px;color:#fdf9f9;
     display:flex;gap:10px;font-weight:500;
   }
   .hero-text .role span:not(:last-child)::after{content:"•";margin-left:10px;color:var(--gold-500);}
   .hero-text p.desc{
-    margin-top:24px;max-width:500px;color:var(--white);font-size:18px;
+    margin-top:24px;max-width:500px;color:#ffffff;font-size:18px;
   }
   .hero-portrait{
     position:relative;display:flex;justify-content:center;
     background-color: transparent;
+    height:490px;
   }
   .portrait-frame{
     width:min(620px,100%);height:560px;
@@ -163,7 +195,7 @@
     background-color: transparent;
     position:relative;overflow:hidden;
   }
-  .portrait-frame img{width:150%;height:110%;object-fit:contain;object-position:center bottom;}
+  .portrait-frame img{width:90%;height:105%;object-fit:contain;object-position:top; border-radius:0%;border:0px solid rgb(255, 181, 22);background-color:rgba(252, 246, 219, 0);}
   .portrait-frame .initials{
     font-family:Georgia,serif;font-size:120px;font-weight:700;
     color:rgba(220,184,74,.16);position:absolute;top:14px;left:20px;
@@ -234,10 +266,12 @@
   }
   .acc-title{font-size:18px;font-weight:600;}
   .acc-desc{
-    max-width:0;overflow:hidden;color:rgba(255,255,255,.6);font-size:14px;
-    transition:max-width .4s var(--ease);white-space:nowrap;
+    max-width:340px;max-height:0;overflow:hidden;
+    color:rgba(255,255,255,.6);font-size:14px;opacity:0;
+    transform:translateY(-6px);
+    transition:max-height .45s var(--ease),opacity .3s ease,transform .45s var(--ease);
   }
-  .acc-item.active .acc-desc{max-width:340px;white-space:normal;}
+  .acc-item.active .acc-desc{max-height:120px;opacity:1;transform:translateY(0);}
   .acc-item.active .acc-title{color:var(--gold-400);}
   .acc-chev{transition:transform .3s var(--ease);color:var(--gold-500);}
   .acc-item.active .acc-chev{transform:rotate(45deg);}
@@ -339,7 +373,7 @@
   }
   .cert-body{padding:16px 18px 20px;}
   .cert-num{font-size:11px;color:var(--gold-500);font-weight:700;letter-spacing:1px;}
-  .cert-body h4{font-size:16px;color:var(--navy-900);margin-top:6px;font-family:'Poppins',sans-serif;font-weight:600;}
+  .cert-body h4{font-size:16px;color:var(--navy-900);margin-top:6px;font-family:'Inter',sans-serif;font-weight:600;}
   .cert-body p{font-size:12.5px;color:var(--muted);margin-top:4px;}
 
   /* ---------- BEYOND BUSINESS ---------- */
@@ -397,7 +431,7 @@
   /* ---------- FOOTER ---------- */
   footer{background:var(--navy-950);color:rgba(255,255,255,.65);padding-top:70px;}
   .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.08);}
-  .footer-grid h5{color:var(--white);font-size:16px;letter-spacing:.5px;margin-bottom:18px;font-family:'Poppins',sans-serif;font-weight:600;}
+  .footer-grid h5{color:var(--white);font-size:16px;letter-spacing:.5px;margin-bottom:18px;font-family:'Inter',sans-serif;font-weight:600;}
   .footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:13.5px;}
   .footer-grid ul a{transition:color .25s;}
   .footer-grid ul a:hover{color:var(--gold-400);}
@@ -454,7 +488,7 @@
 <section class="hero" id="home">
   <div class="hero-inner">
     <div class="hero-text">
-      <span class="kicker"></span>
+      <span class="kicker">Mr,Rtn,</span>
       <img class="hero-sign" src="https://res.cloudinary.com/nalikfpn/image/upload/v1789037806/7916426a-e9c6-4c9c-9b84-d29252f148bd-Picsart-BackgroundRemover.png" alt="Elangovan Rangaswamy signature">
       <div class="role"><span>Engineer</span><span>Builder</span><span>Leader</span></div>
       <p class="desc">With strong engineering expertise and visionary leadership, he has been driving positive international business excellence in construction and infrastructure development.</p>
@@ -462,9 +496,9 @@
       <div><a href="#contact" class="btn-gold" style="margin-top:10px;display:inline-block;">Let's Talk</a></div>
     </div>
     <div class="hero-portrait">
-      <!-- <div class="portrait-frame">
-        <img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789029284/MD3.png" alt="Elangovan Rangaswamy receiving an honour on stage">
-      </div> -->
+      <div class="portrait-frame">
+        <img src="https://res.cloudinary.com/nalikfpn/image/upload/v1789117746/WhatsApp_Image_2026-09-11_at_2_36_06_PM-Picsart-BackgroundRemover.png" alt="Elangovan Rangaswamy receiving an honour on stage">
+      </div>
     </div>
   </div>
 
@@ -643,14 +677,14 @@
         <h3>Tell me about your project.</h3>
         <form id="contactForm">
           <div class="form-row">
-            <div class="form-field"><label>Full Name</label><input type="text" required></div>
-            <div class="form-field"><label>Email Address</label><input type="email" required></div>
+            <div class="form-field"><label>Full Name</label><input id="contactName" type="text" required></div>
+            <div class="form-field"><label>Email Address</label><input id="contactEmail" type="email" required></div>
           </div>
           <div class="form-row">
-            <div class="form-field full"><label>Subject</label><input type="text"></div>
+            <div class="form-field full"><label>Subject</label><input id="contactSubject" type="text"></div>
           </div>
           <div class="form-row">
-            <div class="form-field full"><label>Message</label><textarea required></textarea></div>
+            <div class="form-field full"><label>Message</label><textarea id="contactMessage" required></textarea></div>
           </div>
           <button type="submit" class="btn-gold" style="width:100%;">Send Message</button>
         </form>
@@ -760,6 +794,18 @@
   }, { threshold: 0.15 });
   fadeEls.forEach(el => fadeObserver.observe(el));
 
+  // Section reveal on scroll
+  const sections = document.querySelectorAll('section');
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section-visible');
+        sectionObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  sections.forEach(section => sectionObserver.observe(section));
+
   // Build certificate cards dynamically
   const certData = [
     ["01","Excellence In Engineering","IIT, Madras"],
@@ -789,14 +835,15 @@
     certGrid.appendChild(card);
   });
 
-  // Contact form (demo only, no backend)
+  // Open the visitor's default email app with the contact details filled in.
   document.getElementById('contactForm').addEventListener('submit', e => {
     e.preventDefault();
-    const btn = e.target.querySelector('button');
-    const original = btn.textContent;
-    btn.textContent = 'Message Sent ✓';
-    e.target.reset();
-    setTimeout(() => btn.textContent = original, 2500);
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const subject = document.getElementById('contactSubject').value.trim() || `New enquiry from ${name}`;
+    const message = document.getElementById('contactMessage').value.trim();
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    window.location.href = `mailto:s.mohdsameer.work@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 </script>
 </body>
